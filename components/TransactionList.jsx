@@ -1,54 +1,46 @@
 import React from 'react';
-import { FlatList, View, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import TransactionItem from './TransactionItem';
 
 const transactions = [
   {
     id: '1',
-    icon: require('../assets/Images/apple.png'),
-    title: 'Apple Store',
-    category: 'Entertainment',
-    amount: -5.99,
+    icon: require('../assets/Images/sent.png'),
+    title: 'Sent Money',
+    category: 'Finance',
+    amount: -200,
   },
   {
     id: '2',
-    icon: require('../assets/Images/spotify.png'),
-    title: 'Spotify',
-    category: 'Music',
-    amount: -12.99,
+    icon: require('../assets/Images/receive.png'),
+    title: 'Received Money',
+    category: 'Finance',
+    amount: 500,
   },
   {
     id: '3',
-    icon: require('../assets/Images/moneyTransfer.png'),
-    title: 'Money Transfer',
-    category: 'Transaction',
-    amount: 300,
+    icon: require('../assets/Images/loan.png'),
+    title: 'Loan Payment',
+    category: 'Finance',
+    amount: -300,
   },
   {
     id: '4',
-    icon: require('../assets/Images/grocery.png'),
-    title: 'Grocery',
-    category: 'Shopping',
-    amount: -88,
+    icon: require('../assets/Images/topUp.png'),
+    title: 'Mobile Topup',
+    category: 'Finance',
+    amount: -50,
   },
 ];
 
 const TransactionList = () => {
   return (
-    <View style={styles.listContainer}>
-      <FlatList
-        data={transactions}
-        renderItem={({ item }) => <TransactionItem item={item} />}
-        keyExtractor={(item) => item.id}
-      />
-    </View>
+    <FlatList
+      data={transactions}
+      renderItem={({ item }) => <TransactionItem item={item} />}
+      keyExtractor={(item) => item.id}
+    />
   );
 };
-
-const styles = StyleSheet.create({
-  listContainer: {
-    // marginTop: 10,
-  },
-});
 
 export default TransactionList;

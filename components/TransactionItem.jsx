@@ -1,16 +1,28 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import { useTheme } from '../context/ThemeContext';
 
 const TransactionItem = ({ item }) => {
+  const { theme } = useTheme();
+
   return (
-    <View style={styles.itemContainer}>
+    <View
+      style={[styles.itemContainer, { borderBottomColor: theme.colors.border }]}
+    >
       <Image source={item.icon} style={styles.icon} />
       <View style={styles.details}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.category}>{item.category}</Text>
+        <Text style={[styles.title, { color: theme.colors.text }]}>
+          {item.title}
+        </Text>
+        <Text style={[styles.category, { color: theme.colors.text }]}>
+          {item.category}
+        </Text>
       </View>
       <Text
-        style={[styles.amount, { color: item.amount > 0 ? 'blue' : 'black' }]}
+        style={[
+          styles.amount,
+          { color: item.amount > 0 ? 'blue' : theme.colors.text },
+        ]}
       >
         {item.amount > 0 ? `$${item.amount}` : `- $${Math.abs(item.amount)}`}
       </Text>
@@ -24,7 +36,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#eee',
   },
   icon: {
     width: 15,
@@ -40,7 +51,7 @@ const styles = StyleSheet.create({
   },
   category: {
     fontSize: 14,
-    color: '#666',
+    color: 'gray',
   },
   amount: {
     fontSize: 16,

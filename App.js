@@ -1,15 +1,18 @@
 import * as React from 'react';
-import { Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './screens/Home';
 import MyCards from './screens/MyCards';
 import Statistics from './screens/Statistics';
 import Settings from './screens/Settings';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { Image } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
+  const { theme } = useTheme();
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -50,8 +53,10 @@ function MyTabs() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
+    <ThemeProvider>
+      <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
+    </ThemeProvider>
   );
 }

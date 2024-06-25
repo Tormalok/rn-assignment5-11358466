@@ -1,13 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { useTheme } from '../context/ThemeContext';
 
 const FeatureItem = ({ icon, label }) => {
+  const { theme } = useTheme();
+
   return (
     <View style={styles.container}>
-      <View style={styles.iconContainer}>
+      <View
+        style={[styles.iconContainer, { backgroundColor: theme.colors.card }]}
+      >
         <Image source={icon} style={styles.icon} />
       </View>
-      <Text style={styles.label}>{label}</Text>
+      <Text style={[styles.label, { color: theme.colors.text }]}>{label}</Text>
     </View>
   );
 };
@@ -21,18 +26,16 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: '#f0f0f0',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 8,
   },
   icon: {
-    width: 25,
-    height: 25,
+    width: 30,
+    height: 30,
   },
   label: {
     fontSize: 14,
-    color: '#333',
   },
 });
 

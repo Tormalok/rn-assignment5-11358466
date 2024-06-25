@@ -1,10 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { useTheme } from '../context/ThemeContext';
 
-const Statistics = (title) => {
+const Statistics = () => {
+  const { theme } = useTheme();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.formatText}>Statistics Page</Text>
+    <View
+      style={[styles.container, { backgroundColor: theme.colors.background }]}
+    >
+      <Text style={[styles.formatText, { color: theme.colors.text }]}>
+        Statistics Page
+      </Text>
     </View>
   );
 };
@@ -14,9 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
   },
-
   formatText: {
     fontSize: 25,
     fontWeight: '500',

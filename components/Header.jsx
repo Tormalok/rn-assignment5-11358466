@@ -1,21 +1,32 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { useTheme } from '../context/ThemeContext';
 
 const Header = () => {
+  const { theme } = useTheme();
+
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, { backgroundColor: theme.colors.background }]}
+    >
       <Image
         source={require('../assets/Images/profile.png')}
         style={styles.profileImage}
       />
       <View style={styles.textContainer}>
-        <Text style={styles.welcomeText}>Welcome back,</Text>
-        <Text style={styles.nameText}>Henry Amponsah</Text>
+        <Text style={[styles.welcomeText, { color: theme.colors.text }]}>
+          Welcome back,
+        </Text>
+        <Text style={[styles.nameText, { color: theme.colors.text }]}>
+          Henry Amponsah
+        </Text>
       </View>
-      <Image
-        source={require('../assets/Images/search.png')}
-        style={styles.searchIcon}
-      />
+      <View style={styles.searchIconBackground}>
+        <Image
+          source={require('../assets/Images/search.png')}
+          style={styles.searchIcon}
+        />
+      </View>
     </View>
   );
 };
@@ -25,7 +36,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#fff',
   },
   profileImage: {
     width: 60,
@@ -38,18 +48,22 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 22,
-    color: '#6e6e6e',
   },
   nameText: {
     fontSize: 25,
     fontWeight: 'bold',
   },
-  searchIcon: {
-    padding: '40',
+  searchIconBackground: {
     width: 60,
     height: 60,
     backgroundColor: '#f0f0f0',
     borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  searchIcon: {
+    width: 30,
+    height: 30,
   },
 });
 
