@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-const SettingsScreen = () => {
+const Settings = () => {
   const [isThemeEnabled, setIsThemeEnabled] = useState(false);
   const toggleSwitch = () =>
     setIsThemeEnabled((previousState) => !previousState);
@@ -82,4 +82,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SettingsScreen;
+export default Settings;

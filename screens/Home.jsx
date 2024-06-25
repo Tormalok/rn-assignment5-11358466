@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Features from '../components/Features';
 import TransactionList from '../components/TransactionList';
 
-const HomeScreen = () => {
+const Home = () => {
   return (
     <View style={styles.container}>
       <Header />
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default Home;
