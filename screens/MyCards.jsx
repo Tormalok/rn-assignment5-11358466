@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const MyCards = (title) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.formatText}>The MyCards Page</Text>
+      <Text style={styles.formatText}>MyCards Page</Text>
     </View>
   );
 };

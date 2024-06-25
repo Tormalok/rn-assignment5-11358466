@@ -33,16 +33,17 @@ function MyTabs() {
             />
           );
         },
+        tabBarActiveTintColor: '#003262',
+        tabBarInactiveTintColor: 'gray',
+        tabBarLabelStyle: { fontSize: 16, paddingBottom: 5 },
+        tabBarItemStyle: { paddingVertical: 10 },
+        tabBarStyle: { height: 90 },
       })}
-      tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
-      }}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Settings" component={Settings} />
       <Tab.Screen name="MyCards" component={MyCards} />
       <Tab.Screen name="Statistics" component={Statistics} />
+      <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );
 }

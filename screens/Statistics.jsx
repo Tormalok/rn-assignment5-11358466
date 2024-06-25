@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const Statistics = (title) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.formatText}>The Statistics Page</Text>
+      <Text style={styles.formatText}>Statistics Page</Text>
     </View>
   );
 };
