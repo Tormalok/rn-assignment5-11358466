@@ -11,4 +11,6 @@ features, transaction list and others. The **Settings** screen was created there
 **MyCards** and **Statistics** screens. All these were done in the **normal theme _(light mode)_**. Then lastly, the **dark theme**  
 feature when the theme button is toggled was implemented into the application.
 
-## Application In The Light Mode
+## Application In The Light Mode [Running on Google Pixel 7a]
+
+### Home Screen
