@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   profileImage: {
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
     borderRadius: 25,
   },
   textContainer: {
@@ -37,17 +37,17 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   welcomeText: {
-    fontSize: 20,
+    fontSize: 22,
     color: '#6e6e6e',
   },
   nameText: {
-    fontSize: 18,
+    fontSize: 25,
     fontWeight: 'bold',
   },
   searchIcon: {
     padding: '40',
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
     backgroundColor: '#f0f0f0',
     borderRadius: 50,
   },
